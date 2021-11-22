@@ -12,6 +12,7 @@ pipeline {
         stage('Test') {
           steps {
             echo 'Testing the application'
+            echo '"Get the Driver Path $[ChromeDriverPath]"'
           }
         }
 
@@ -24,5 +25,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    ChromeDriverPath = 'D:\\Users\\Supriya.Awaghade\\Downloads\\Driver\\chromedriver.exe'
   }
 }
