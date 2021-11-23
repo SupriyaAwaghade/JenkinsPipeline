@@ -29,14 +29,13 @@ pipeline {
     }
 
     stage('Deploy') {
-       when
-        {
-          branch 'master'
-        }
+      when {
+        branch 'master'
+      }
       parallel {
-      stage('Deploy') {
+        stage('Deploy') {
           steps {
-            input(message: 'Do you want to Deploy ?', id: 'Ok')
+            input(message: 'Do you want to Deploy ', id: 'Ok')
             echo 'Deploying the app IIS server'
           }
         }
